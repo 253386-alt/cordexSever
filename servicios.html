@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios ofrecidos por CORDEXSERVER">
+  <title>Servicios - CORDEXSERVER</title>
+  <link rel="icon" href="img/I1.jpeg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <button class="logo logo--btn" id="sidebarToggle" aria-label="Abrir barra lateral" aria-expanded="false" aria-controls="sidebar">
+        <img class="logo__img" src="img/I1.jpeg" alt="Logo" width="38" height="46">
+        <span>CORDEXSERVER</span>
+      </button>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Barra lateral -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar__header">
+      <span class="sidebar__brand">
+        <img class="logo__img" src="img/I1.jpeg" alt="Logo" width="38" height="46">
+        <span class="sidebar__title">CORDEXSERVER</span>
+      </span>
+      <button class="sidebar__close" id="sidebarClose" aria-label="Cerrar barra lateral">&times;</button>
+    </div>
+   <nav class="sidebar__nav">
+  <a href="index.html#inicio">🏠 Inicio</a>
+  <a href="servicios.html">🛠️ Servicios</a>
+  <a href="index.html#nosotros">👥 Nosotros</a>
+  <a href="index.html#contacto">✉️ Contacto</a>
+</nav>
+    <div class="sidebar__footer">
+      <p>¿Necesitas ayuda?</p>
+      <a href="index.html#contacto" class="btn btn--small">Escríbenos</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Encabezado de Servicios -->
+    <section class="hero">
+      <div class="container hero__content">
+        <h1>Nuestros <span class="highlight">Servicios Especializados</span></h1>
+        <p>Soluciones de infraestructura, hosting y desarrollo a la medida de tu proyecto.</p>
+      </div>
+    </section>
+
+    <!-- Catálogo de Servicios Completo -->
+    <section class="section">
+      <div class="container">
+        <div class="cards cards--grid">
+          
+          <article class="card card--service">
+            <div class="card__icon">🖥️</div>
+            <h3>Servidores Dedicados & VPS</h3>
+            <p>Configuración, despliegue y mantenimiento de servidores virtuales y dedicados de alto rendimiento sobre entornos Linux.</p>
+            <ul class="service__list">
+              <li>✓ Configuración de SO y virtualización</li>
+              <li>✓ Optimización de recursos y rendimiento</li>
+              <li>✓ Soporte técnico y monitorización</li>
+            </ul>
+            <a href="index.html#contacto" class="btn btn--small">Cotizar</a>
+          </article>
+
+          <article class="card card--service">
+            <div class="card__icon">🌐</div>
+            <h3>Desarrollo Web & APIS</h3>
+            <p>Construcción de aplicaciones web responsivas, landings corporativas y APIs REST personalizadas con arquitecturas escalables.</p>
+            <ul class="service__list">
+              <li>✓ Interfaces modernas (HTML5/CSS3/JS)</li>
+              <li>✓ Arquitectura backend y bases de datos</li>
+              <li>✓ Integración con APIs de terceros</li>
+            </ul>
+            <a href="index.html#contacto" class="btn btn--small">Cotizar</a>
+          </article>
+
+          <article class="card card--service">
+            <div class="card__icon">🛡️</div>
+            <h3>Seguridad & Redes VPN</h3>
+            <p>Implementación de redes privadas, proxy, protección contra amenazas y configuración de tunneling seguro para tu infraestructura.</p>
+            <ul class="service__list">
+              <li>✓ Clientes y servidores VPN personalizados</li>
+              <li>✓ Certificados SSL y reglas de Firewall</li>
+              <li>✓ Auditoría básica de vulnerabilidades</li>
+            </ul>
+            <a href="index.html#contacto" class="btn btn--small">Cotizar</a>
+          </article>
+
+          <article class="card card--service">
+            <div class="card__icon">⚡</div>
+            <h3>Optimización & Mantenimiento</h3>
+            <p>Diagnóstico de rendimiento, limpieza de sistemas, migración de datos y resolución de errores en entornos de producción.</p>
+            <ul class="service__list">
+              <li>✓ Migración de sistemas y sitios web</li>
+              <li>✓ Reparación de scripts y bugs</li>
+              <li>✓ Copias de seguridad automatizadas</li>
+            </ul>
+            <a href="index.html#contacto" class="btn btn--small">Cotizar</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CORDEXSERVER. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

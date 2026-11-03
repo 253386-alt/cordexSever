@@ -6,7 +6,8 @@
   <meta name="description" content="Descripción breve de tu página web">
   <title>Mi Página Web</title>
   <link rel="icon" href="img/I1.jpeg">
-  <link rel="stylesheet" href="styles.css">
+  <!-- Enlace al archivo CSS en su carpeta -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -19,14 +20,6 @@
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="nav" id="nav">
-        <ul class="nav__list">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-          <li><a href="#contacto" class="btn btn--small">Contacto</a></li>
-        </ul>
-      </nav>
     </div>
   </header>
 
@@ -41,11 +34,11 @@
       <button class="sidebar__close" id="sidebarClose" aria-label="Cerrar barra lateral">&times;</button>
     </div>
     <nav class="sidebar__nav">
-      <a href="#inicio">🏠 Inicio</a>
-      <a href="#servicios">🛠️ Servicios</a>
-      <a href="#nosotros">👥 Nosotros</a>
-      <a href="#contacto">✉️ Contacto</a>
-    </nav>
+  <a href="index.html">🏠 Inicio</a>
+  <a href="servicios.html">🛠️ Servicios</a>
+  <a href="index.html#nosotros">👥 Nosotros</a>
+  <a href="index.html#contacto">✉️ Contacto</a>
+</nav>
     <div class="sidebar__footer">
       <p>¿Necesitas ayuda?</p>
       <a href="#contacto" class="btn btn--small">Escríbenos</a>
@@ -129,46 +122,7 @@
     </div>
   </footer>
 
-  <script>
-    // Barra lateral
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('overlay');
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarClose = document.getElementById('sidebarClose');
-
-    function setSidebar(open) {
-      sidebar.classList.toggle('sidebar--open', open);
-      overlay.classList.toggle('overlay--show', open);
-      sidebar.setAttribute('aria-hidden', !open);
-      sidebarToggle.setAttribute('aria-expanded', open);
-      document.body.classList.toggle('no-scroll', open);
-    }
-
-    sidebarToggle.addEventListener('click', () =>
-      setSidebar(!sidebar.classList.contains('sidebar--open'))
-    );
-    sidebarClose.addEventListener('click', () => setSidebar(false));
-    overlay.addEventListener('click', () => setSidebar(false));
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') setSidebar(false);
-    });
-    sidebar.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => setSidebar(false))
-    );
-
-    // Menú móvil
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('nav');
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('nav--open');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    nav.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        nav.classList.remove('nav--open');
-        toggle.setAttribute('aria-expanded', false);
-      })
-    );
-  </script>
+  <!-- Enlace al archivo JS externo -->
+  <script src="js/script.js"></script>
 </body>
 </html>
