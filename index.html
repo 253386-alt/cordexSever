@@ -29,11 +29,14 @@ h1,h2,h3{font-family:Inter,sans-serif;letter-spacing:-.04em;line-height:.95}
 .pill-red{display:inline-flex;align-items:center;gap:.5rem;background:#ff2e2e;color:#fff;border-radius:999px;padding:.7rem 1.6rem;font-weight:700;font-size:.9rem;transition:transform .2s, background .2s;box-shadow:0 0 20px rgba(255,46,46,.35)}
 .pill-red:hover{transform:scale(1.05);background:#ff4040}
 .illuminate-gradient{background:linear-gradient(90deg,#ff3b30 0%,#ff6a3d 30%,#a855f7 65%,#7c3aed 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.viture-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#000}
-.viture-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.viture-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#000;isolation:isolate}
+.viture-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1.04);filter:saturate(1.05) contrast(1.08) brightness(.82);animation:heroBreath 18s ease-in-out infinite alternate;will-change:transform,filter}
 .hero-media{position:absolute;inset:0;overflow:hidden}
-.viture-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.15) 70%,rgba(0,0,0,.05) 100%),linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 40%)}
-.viture-hero-glow{position:absolute;inset:0;background:radial-gradient(60% 50% at 72% 35%,rgba(255,45,45,.35),transparent 60%),radial-gradient(50% 40% at 80% 70%,rgba(168,85,247,.25),transparent 60%);mix-blend-mode:screen;pointer-events:none}
+.hero-media::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 35%,rgba(0,0,0,.45) 100%);pointer-events:none;z-index:1}
+.viture-hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.58) 38%,rgba(0,0,0,.18) 68%,rgba(0,0,0,.08) 100%),linear-gradient(0deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.25) 35%,transparent 55%)}
+.viture-hero-glow{position:absolute;inset:0;z-index:1;background:radial-gradient(55% 45% at 72% 35%,rgba(255,45,45,.28),transparent 62%),radial-gradient(45% 40% at 80% 70%,rgba(168,85,247,.22),transparent 62%);mix-blend-mode:screen;pointer-events:none}
+@keyframes heroBreath{0%{transform:scale(1.04) translate3d(0,0,0)}100%{transform:scale(1.12) translate3d(-1.5%, -1%, 0)}}
+@media (prefers-reduced-motion: reduce){.viture-hero-bg{animation:none;transform:scale(1.04)}}
 .pill-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);color:#fff;border-radius:999px;padding:.85rem 1.7rem;font-weight:600;font-size:.95rem;transition:background .2s}
 .pill-ghost:hover{background:rgba(255,255,255,.08)}
 .spec{border-top:1px solid var(--line);padding-top:1.2rem}
@@ -104,8 +107,10 @@ h1,h2,h3{font-family:Inter,sans-serif;letter-spacing:-.04em;line-height:.95}
 <!-- HERO -->
 <section id="hero" class="viture-hero">
   <div class="hero-media">
-    <video class="viture-hero-bg" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop">
-      <source src="video/11111.mp4" type="video/mp4">
+    <video class="viture-hero-bg" autoplay muted loop playsinline preload="metadata" poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop" disablepictureinpicture>
+      <source src="video/cordexserver-hq.webm" type="video/webm">
+      <source src="video/cordexserver-hq.mp4" type="video/mp4">
+      <source src="video/cordexserver.mp4" type="video/mp4">
       Tu navegador no soporta video.
     </video>
     <div class="viture-hero-overlay"></div>
