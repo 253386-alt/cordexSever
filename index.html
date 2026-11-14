@@ -1,128 +1,305 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Descripción breve de tu página web">
-  <title>Mi Página Web</title>
-  <link rel="icon" href="img/I1.jpeg">
-  <!-- Enlace al archivo CSS en su carpeta -->
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CORDEXSERVER - Illuminate Your Server. VPS, Streaming y Desarrollo de alto rendimiento.">
+<title>CORDEXSERVER | Illuminate Your Server</title>
+<link rel="icon" href="img/I1.jpeg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#000;--muted:#a1a1aa;--line:rgba(255,255,255,.12)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:#fff;font-family:Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Inter,sans-serif;letter-spacing:-.04em;line-height:.95}
+::selection{background:#fff;color:#000}
+::-webkit-scrollbar{width:0;height:0}
+.dots-grid{background-image:radial-gradient(rgba(255,255,255,.22) 1px,transparent 1px);background-size:14px 14px}
+.eyebrow{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.viture-hero-title{font-size:clamp(3.5rem,11vw,9rem);font-weight:700;line-height:.9;letter-spacing:-.05em}
+.viture-h2{font-size:clamp(2.8rem,6vw,5.2rem);font-weight:700;line-height:.95}
+.viture-h3{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;line-height:1}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#000;border-radius:999px;padding:.85rem 1.9rem;font-weight:700;font-size:.95rem;transition:transform .2s}
+.pill:hover{transform:scale(1.04)}
+.pill-red{display:inline-flex;align-items:center;gap:.5rem;background:#ff2e2e;color:#fff;border-radius:999px;padding:.7rem 1.6rem;font-weight:700;font-size:.9rem;transition:transform .2s, background .2s;box-shadow:0 0 20px rgba(255,46,46,.35)}
+.pill-red:hover{transform:scale(1.05);background:#ff4040}
+.illuminate-gradient{background:linear-gradient(90deg,#ff3b30 0%,#ff6a3d 30%,#a855f7 65%,#7c3aed 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.viture-hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#000}
+.viture-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-media{position:absolute;inset:0;overflow:hidden}
+.viture-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.55) 42%,rgba(0,0,0,.15) 70%,rgba(0,0,0,.05) 100%),linear-gradient(0deg,rgba(0,0,0,.9) 0%,transparent 40%)}
+.viture-hero-glow{position:absolute;inset:0;background:radial-gradient(60% 50% at 72% 35%,rgba(255,45,45,.35),transparent 60%),radial-gradient(50% 40% at 80% 70%,rgba(168,85,247,.25),transparent 60%);mix-blend-mode:screen;pointer-events:none}
+.pill-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);color:#fff;border-radius:999px;padding:.85rem 1.7rem;font-weight:600;font-size:.95rem;transition:background .2s}
+.pill-ghost:hover{background:rgba(255,255,255,.08)}
+.spec{border-top:1px solid var(--line);padding-top:1.2rem}
+.spec-num{font-size:2.6rem;font-weight:700;letter-spacing:-.03em}
+.marquee-wrap{overflow:hidden;white-space:nowrap}
+.marquee{display:flex;gap:1.2rem;width:max-content;animation:marquee 22s linear infinite}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.marquee-img{width:300px;height:190px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
+.plan-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#0a0a0a;transition:transform .25s,border-color .25s}
+.plan-card:hover{transform:translateY(-4px);border-color:rgba(255,255,255,.35)}
+.plan-img{height:260px;width:100%;object-fit:cover}
+.stat-num{font-size:clamp(3.5rem,8vw,6.5rem);font-weight:700;letter-spacing:-.04em;line-height:1}
+.text-balance{text-wrap:balance}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.05;z-index:30;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cursor-dot{position:fixed;top:0;left:0;width:12px;height:12px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:9999;transform:translate(-50%,-50%)}
+@media (hover:none){.cursor-dot{display:none}}
+.sidebar{position:fixed;top:0;left:0;z-index:300;width:min(340px,88vw);height:100%;background:#0a0a0a;border-right:1px solid var(--line);transform:translateX(-102%);transition:transform .35s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.sidebar--open{transform:translateX(0)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;visibility:hidden;transition:.3s;z-index:200}
+.overlay--show{opacity:1;visibility:visible}
+.footer-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+@media(min-width:768px){.footer-grid{grid-template-columns:repeat(5,1fr)}}
+.input-dark{background:#111;border:1px solid var(--line);border-radius:14px;color:#fff;padding:1rem 1.1rem;width:100%;font:inherit}
+.input-dark:focus{outline:none;border-color:rgba(255,255,255,.6)}
+</style>
 </head>
 <body>
+<div class="cursor-dot" id="cursor"></div>
+<div class="noise"></div>
 
-  <header class="header">
-    <div class="container header__inner">
-      <button class="logo logo--btn" id="sidebarToggle" aria-label="Abrir barra lateral" aria-expanded="false" aria-controls="sidebar">
-        <img class="logo__img" src="img/I1.jpeg" alt="Logo" width="38" height="46">
-        <span>CORDEXSERVER</span>
-      </button>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
+<div class="overlay" id="overlay"></div>
+<aside class="sidebar" id="sidebar" aria-hidden="true">
+  <div class="flex items-center justify-between p-6 border-b border-white/10">
+    <div class="flex items-center gap-3"><img src="img/I1.jpeg" alt="CORDEXSERVER" class="h-11 w-auto rounded-lg"><span class="font-bold text-lg">CORDEXSERVER</span></div>
+    <button id="sidebarClose" class="text-3xl text-white/60 hover:text-white" aria-label="Cerrar">&times;</button>
+  </div>
+  <nav class="flex flex-col p-3 flex-1">
+    <a href="index.html" class="px-4 py-4 rounded-xl hover:bg-white/5 font-medium">🏠 Inicio</a>
+    <a href="servicios/index.html" class="px-4 py-4 rounded-xl hover:bg-white/5 font-medium">🛠️ Servicios</a>
+    <a href="servicios/streaming.html" class="px-4 py-4 rounded-xl hover:bg-white/5 font-medium">📺 Streaming</a>
+    <a href="#contacto" class="px-4 py-4 rounded-xl hover:bg-white/5 font-medium">✉️ Contacto</a>
+  </nav>
+  <div class="p-6 border-t border-white/10 text-center"><p class="text-white/50 mb-4">¿Necesitas ayuda?</p><a href="#contacto" class="pill w-full justify-center">Escríbenos</a></div>
+</aside>
 
-  <!-- Barra lateral -->
-  <div class="overlay" id="overlay"></div>
-  <aside class="sidebar" id="sidebar" aria-hidden="true">
-    <div class="sidebar__header">
-      <span class="sidebar__brand">
-        <img class="logo__img" src="img/I1.jpeg" alt="Logo" width="38" height="46">
-        <span class="sidebar__title">CORDEXSERVER</span>
-      </span>
-      <button class="sidebar__close" id="sidebarClose" aria-label="Cerrar barra lateral">&times;</button>
+<header class="fixed top-0 left-0 w-full z-40 backdrop-blur-xl bg-black/70 border-b border-white/10">
+  <div class="max-w-[1280px] mx-auto px-6 h-[72px] flex items-center justify-between">
+    <button id="sidebarToggle" class="flex items-center gap-3 hover:opacity-80" aria-expanded="false" aria-controls="sidebar">
+      <img src="img/I1.jpeg" alt="CORDEXSERVER" class="h-10 w-auto rounded-lg">
+      <span class="font-bold tracking-tight text-lg">CORDEXSERVER</span>
+    </button>
+    <nav class="hidden md:flex items-center gap-10 text-sm text-white/80">
+      <a href="servicios/index.html" class="hover:text-white">Servicios</a>
+      <a href="servicios/streaming.html" class="hover:text-white">Streaming</a>
+      <a href="#contacto" class="hover:text-white">Contacto</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <span class="hidden lg:flex items-center gap-2 text-white/70 text-sm"><span class="inline-block w-7 h-3 rounded-full bg-gradient-to-r from-red-500 to-purple-500"></span>FROM <b class="text-white">$9</b></span>
+      <a href="#contacto" class="pill-red !py-2.5 !px-6 text-sm">Order Now</a>
+      <button id="sidebarToggleMenu" class="md:hidden text-sm tracking-widest uppercase text-white/80">Menú</button>
     </div>
-    <nav class="sidebar__nav">
-  <a href="index.html">🏠 Inicio</a>
-  <a href="servicios.html">🛠️ Servicios</a>
-  <a href="index.html#nosotros">👥 Nosotros</a>
-  <a href="index.html#contacto">✉️ Contacto</a>
-</nav>
-    <div class="sidebar__footer">
-      <p>¿Necesitas ayuda?</p>
-      <a href="#contacto" class="btn btn--small">Escríbenos</a>
-    </div>
-  </aside>
+  </div>
+</header>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="inicio">
-      <div class="container hero__content">
-        <h1>Bienvenido a <span class="highlight">tu nuevo sitio</span></h1>
-        <p>Una base limpia, moderna y adaptable a cualquier dispositivo para empezar tu proyecto.</p>
-        <div class="hero__actions">
-          <a href="#servicios" class="btn">Ver servicios</a>
-          <a href="#contacto" class="btn btn--outline">Contáctanos</a>
+<main>
+<!-- HERO con video 11111 y cortina al bajar (estilo VITURE) -->
+<section id="hero" class="viture-hero">
+  <div class="hero-media">
+    <video class="viture-hero-bg" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1800&auto=format&fit=crop">
+      <source src="video/11111.mp4" type="video/mp4">
+      Tu navegador no soporta video.
+    </video>
+    <div class="viture-hero-overlay"></div>
+    <div class="viture-hero-glow"></div>
+  </div>
+  <div class="dots-grid absolute bottom-24 left-0 right-0 h-24 opacity-50 pointer-events-none"></div>
+  <div class="hero-copy relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-10 pb-24 pt-40">
+    <p class="text-white/70 tracking-[0.3em] text-[11px] uppercase mb-4">CORDEXSERVER • LUMA SERIES</p>
+    <h1 class="viture-hero-title reveal text-balance">
+      <span class="illuminate-gradient">Illuminate</span><br>
+      <span class="text-white">Your Server</span>
+    </h1>
+    <p class="mt-6 text-white/70 text-lg md:text-xl max-w-xl leading-relaxed">Infraestructura, hosting y desarrollo de alto rendimiento. Next Gen VPS, Streaming y Seguridad para tu proyecto.</p>
+    <div class="mt-8 flex gap-4 flex-wrap">
+      <a href="servicios/index.html" class="pill-red">Ver servicios</a>
+      <a href="servicios/streaming.html" class="pill-ghost !bg-black/40 backdrop-blur">Ver streaming en vivo</a>
+    </div>
+    <p class="mt-6 text-sm text-white/50 flex items-center gap-3"><span class="inline-block w-6 h-2 rounded-full bg-gradient-to-r from-red-500 to-purple-500"></span>FROM <b class="text-white">$9</b> /mes</p>
+  </div>
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/50">
+    <span class="text-[11px] tracking-widest uppercase">Scroll</span>
+    <span class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center backdrop-blur bg-black/30">↓</span>
+  </div>
+</section>
+
+<!-- STAT + big features viture -->
+<section class="px-6 py-24 border-t border-white/10">
+  <div class="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-16">
+    <div>
+      <p class="eyebrow mb-4">Display</p>
+      <h2 class="viture-h2 reveal">Una latencia<br>4K-Like</h2>
+      <p class="text-white/60 mt-6 text-lg leading-relaxed">Nunca la olvidarás. Hasta <b class="text-white">15ms</b> de latencia, mejorada con optimización avanzada. Nitidez casi 4K en cada stream.</p>
+      <a href="#contacto" class="inline-block mt-8 underline underline-offset-4 text-white/80">Learn More</a>
+      <div class="grid grid-cols-2 gap-8 mt-14">
+        <div class="spec"><p class="spec-num reveal">0.12<span class="text-2xl">ms</span></p><p class="text-white/50 mt-1">Latencia global<br>Optimizada</p></div>
+        <div class="spec"><p class="spec-num reveal">99.99<span class="text-2xl">%</span></p><p class="text-white/50 mt-1">Uptime garantizado</p></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="viture-h3 mb-4">Even Sharper</h3>
+      <p class="text-white/60 leading-relaxed">Más nítido que un VPS cualquiera — y eso ya era lo más rápido que existía. NVMe, AMD EPYC y red 10G.</p>
+      <div class="dots-grid h-[320px] rounded-3xl border border-white/10 mt-10 relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-70" alt="">
+        <div class="absolute bottom-4 left-4 bg-black/70 backdrop-blur px-4 py-2 rounded-full text-xs tracking-widest">THE BEST JUST GOT BETTER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 features viture -->
+<section class="px-6 py-20">
+  <div class="max-w-[1100px] mx-auto">
+    <h2 class="viture-h2 text-center reveal">The Best<br>Just Got Better</h2>
+    <div class="grid md:grid-cols-4 gap-8 mt-16">
+      <div><div class="rounded-2xl overflow-hidden border border-white/10 h-52"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt=""></div><h3 class="font-bold text-xl mt-6">Sharper Than Ever</h3><p class="text-white/50 mt-2 leading-relaxed">Textos nítidos — perfecto para desarrollo y productividad.</p></div>
+      <div><div class="rounded-2xl overflow-hidden border border-white/10 h-52"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt=""></div><h3 class="font-bold text-xl mt-6">Bright Visuals</h3><p class="text-white/50 mt-2 leading-relaxed">Hasta 1500 nits de rendimiento, ajustable a tu entorno.</p></div>
+      <div><div class="rounded-2xl overflow-hidden border border-white/10 h-52"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt=""></div><h3 class="font-bold text-xl mt-6">Most Accurate Colors</h3><p class="text-white/50 mt-2 leading-relaxed">Visuales fieles a la realidad para tu marca.</p></div>
+      <div><div class="rounded-2xl overflow-hidden border border-white/10 h-52"><img src="https://images.unsplash.com/photo-1551298370-9d3d53740c72?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover grayscale" alt=""></div><h3 class="font-bold text-xl mt-6">Built-in Soporte</h3><p class="text-white/50 mt-2 leading-relaxed">Soporte 24/7 para una claridad total en producción.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Image + audio viture style (full bleed) -->
+<section class="px-6 py-16">
+  <div class="max-w-[1100px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+    <img src="https://images.unsplash.com/photo-1591488328449-d5bdd1c55a4f?q=80&w=1200&auto=format&fit=crop" class="w-full rounded-[28px] border border-white/10 object-cover h-[480px] grayscale" alt="Equipo trabajando">
+    <div>
+      <p class="eyebrow">Next-Gen Audio</p>
+      <h2 class="viture-h2 reveal mt-4">Powered by<br>CORDEX</h2>
+      <p class="text-white/60 mt-6 text-lg leading-relaxed">Un sonido de estudio más rico y completo, significativamente mejorado para que tu proyecto suene profesional.</p>
+      <p class="text-white/40 mt-4 text-sm">Desarrollo Web, APIs y panel de control incluido.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Ecosystem marquee viture -->
+<section class="py-20">
+  <h2 class="viture-h2 text-center px-6 reveal">The Ultimate<br>Ecosystem</h2>
+  <p class="text-center text-white/50 mt-4 mb-12">Compatible con todo tu stack</p>
+  <div class="marquee-wrap border-y border-white/10 py-6">
+    <div class="marquee" id="marquee">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1552820728-b15a04b87fbb?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=600&auto=format&fit=crop" alt="">
+      <!-- duplicado para loop -->
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1552820728-b15a04b87fbb?q=80&w=600&auto=format&fit=crop" alt="">
+      <img class="marquee-img" src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=600&auto=format&fit=crop" alt="">
+    </div>
+  </div>
+
+  <h2 class="viture-h2 text-center px-6 mt-24 reveal">Cross-device<br>compatibility</h2>
+  <p class="text-center text-white/50 mt-4">Control sin fricción. Rendimiento optimizado para juegos y productividad.</p>
+  <div class="max-w-[1100px] mx-auto grid md:grid-cols-3 gap-6 px-6 mt-16">
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">📱</span><h3 class="font-bold text-xl mt-4">Android & iOS</h3><p class="text-white/50 mt-2">Gestiona tu servidor desde cualquier móvil.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="#contacto">Learn more</a></div>
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">🎮</span><h3 class="font-bold text-xl mt-4">Remote Play</h3><p class="text-white/50 mt-2">Streaming low-latency listo para eventos y gaming.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="servicios/streaming.html">Learn more</a></div>
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">☁️</span><h3 class="font-bold text-xl mt-4">Cloud Gaming</h3><p class="text-white/50 mt-2">Edge distribuido para que no sientas la distancia.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="servicios/streaming.html">Learn more</a></div>
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">🔀</span><h3 class="font-bold text-xl mt-4">Switch 2 & Switch</h3><p class="text-white/50 mt-2">Compatibilidad total con consolas y PC.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="#contacto">Learn more</a></div>
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">💻</span><h3 class="font-bold text-xl mt-4">Mac & Windows</h3><p class="text-white/50 mt-2">Panel web impecable en cualquier sistema.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="servicios/index.html">Learn more</a></div>
+    <div class="border border-white/10 rounded-3xl p-8"><span class="text-3xl">🖥️</span><h3 class="font-bold text-xl mt-4">Linux</h3><p class="text-white/50 mt-2">Kernel optimizado y virtualización KVM.</p><a class="text-white/70 underline underline-offset-4 text-sm mt-4 inline-block" href="servicios/index.html">Learn more</a></div>
+  </div>
+</section>
+
+<!-- Choose Your Model viture -->
+<section class="px-6 py-24 border-t border-white/10">
+  <div class="max-w-[1100px] mx-auto">
+    <h2 class="viture-h2 text-center reveal">Choose Your<br>Model</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-16">
+      <div class="plan-card">
+        <img class="plan-img grayscale" src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?q=80&w=800&auto=format&fit=crop" alt="">
+        <div class="p-8">
+          <p class="text-white/50 text-sm tracking-widest">CORE</p>
+          <h3 class="font-bold text-3xl mt-1">Core</h3>
+          <p class="text-white/60 mt-2">Essential — Estiloso y asequible.</p>
+          <p class="text-4xl font-bold mt-6">$9 <span class="text-sm text-white/50">/мес</span></p>
+          <a href="#contacto" class="pill w-full justify-center mt-8">Order Now</a>
         </div>
       </div>
-    </section>
-
-    <!-- Servicios -->
-    <section class="section" id="servicios">
-      <div class="container">
-        <h2 class="section__title">Nuestros servicios</h2>
-        <p class="section__subtitle">Lo que podemos hacer por ti</p>
-        <div class="cards">
-          <article class="card">
-            <div class="card__icon">🚀</div>
-            <h3>Servicio uno</h3>
-            <p>Describe aquí brevemente en qué consiste este servicio.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">🎨</div>
-            <h3>Servicio dos</h3>
-            <p>Describe aquí brevemente en qué consiste este servicio.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">💡</div>
-            <h3>Servicio tres</h3>
-            <p>Describe aquí brevemente en qué consiste este servicio.</p>
-          </article>
+      <div class="plan-card border-white/50">
+        <img class="plan-img grayscale" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop" alt="">
+        <div class="p-8">
+          <p class="text-white/50 text-sm tracking-widest">PRO</p>
+          <h3 class="font-bold text-3xl mt-1">Core Pro</h3>
+          <p class="text-white/60 mt-2">All-Around — Experiencia completa.</p>
+          <p class="text-4xl font-bold mt-6">$19 <span class="text-sm text-white/50">/mes</span></p>
+          <a href="#contacto" class="pill w-full justify-center mt-8">Order Now</a>
         </div>
       </div>
-    </section>
-
-    <!-- Nosotros -->
-    <section class="section section--alt" id="nosotros">
-      <div class="container about">
-        <div class="about__text">
-          <h2 class="section__title">Sobre nosotros</h2>
-          <p>Cuenta tu historia: quiénes son, qué los motiva y qué los hace diferentes. Un párrafo claro y cercano genera confianza.</p>
-          <a href="#contacto" class="btn">Hablemos</a>
+      <div class="plan-card">
+        <img class="plan-img grayscale" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=800&auto=format&fit=crop" alt="">
+        <div class="p-8">
+          <p class="text-white/50 text-sm tracking-widest">ULTRA</p>
+          <h3 class="font-bold text-3xl mt-1">Core Ultra</h3>
+          <p class="text-white/60 mt-2">For Power Users — Lo mejor.</p>
+          <p class="text-4xl font-bold mt-6">$39 <span class="text-sm text-white/50">/mes</span></p>
+          <a href="#contacto" class="pill w-full justify-center mt-8">Order Now</a>
         </div>
-        <div class="about__image" aria-hidden="true"></div>
       </div>
-    </section>
-
-    <!-- Contacto -->
-    <section class="section" id="contacto">
-      <div class="container container--narrow">
-        <h2 class="section__title">Contacto</h2>
-        <p class="section__subtitle">Escríbenos y te responderemos pronto</p>
-        <form class="form" action="#" method="post">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
-
-          <label for="email">Correo electrónico</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-          <button type="submit" class="btn">Enviar mensaje</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2026 MiSitio. Todos los derechos reservados.</p>
     </div>
-  </footer>
+    <p class="text-center text-white/40 mt-10">Not just one. The perfect one — made for you.</p>
+  </div>
+</section>
 
-  <!-- Enlace al archivo JS externo -->
-  <script src="js/script.js"></script>
+<!-- CTA + Contact viture -->
+<section id="contacto" class="px-6 py-24 border-t border-white/10 text-center">
+  <p class="eyebrow">Your Perfect Pick Awaits</p>
+  <h2 class="viture-hero-title mt-4 reveal">Your Perfect<br>Pick Awaits</h2>
+  <div class="max-w-[700px] mx-auto mt-14 border border-white/10 rounded-[28px] p-8 md:p-12 text-left">
+    <h3 class="font-bold text-3xl mb-3">Soporte</h3>
+    <p class="text-white/50 mb-8">Escríbenos y te responderemos pronto.</p>
+    <form class="space-y-4" action="#" method="post">
+      <div><label class="text-sm font-semibold" for="nombre">Nombre</label><input class="input-dark mt-2" id="nombre" name="nombre" type="text" required></div>
+      <div><label class="text-sm font-semibold" for="email">Correo electrónico</label><input class="input-dark mt-2" id="email" name="email" type="email" required></div>
+      <div><label class="text-sm font-semibold" for="mensaje">Mensaje</label><textarea class="input-dark mt-2" id="mensaje" name="mensaje" rows="5" required></textarea></div>
+      <button class="pill w-full justify-center !py-4" type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="border-t border-white/10 px-6 py-16">
+  <div class="max-w-[1100px] mx-auto">
+    <div class="footer-grid text-sm">
+      <div><p class="font-bold mb-4">Shop</p><ul class="space-y-2 text-white/50"><li><a href="servicios/index.html">Servidores</a></li><li><a href="servicios/streaming.html">Streaming</a></li><li>Accesorios</li></ul></div>
+      <div><p class="font-bold mb-4">Community</p><ul class="space-y-2 text-white/50"><li>Reviews</li><li>News</li><li>Blog</li></ul></div>
+      <div><p class="font-bold mb-4">Resources</p><ul class="space-y-2 text-white/50"><li>Panel</li><li>Docs</li><li>API</li></ul></div>
+      <div><p class="font-bold mb-4">Support</p><ul class="space-y-2 text-white/50"><li>FAQ</li><li>Contacto</li><li>Estado</li></ul></div>
+      <div><p class="font-bold mb-4">CORDEXSERVER</p><p class="text-white/40">© 2026 CORDEXSERVER.<br>Todos los derechos reservados.</p></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const cur=document.getElementById('cursor');
+if(cur&&matchMedia('(hover:hover)').matches){
+  const xTo=gsap.quickTo(cur,"x",{duration:.2,ease:"power3"}),yTo=gsap.quickTo(cur,"y",{duration:.2,ease:"power3"});
+  addEventListener("mousemove",e=>{xTo(e.clientX);yTo(e.clientY)});
+}
+gsap.utils.toArray('.reveal').forEach(el=>{
+  gsap.fromTo(el,{y:60,opacity:0},{y:0,opacity:1,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%",end:"top 55%",scrub:1}});
+});
+gsap.to("#marquee",{xPercent:-50,ease:"none",duration:24,repeat:-1});
+
+// Cortina: héroe con video fijo que se abre al bajar (clip como cortina)
+gsap.timeline({scrollTrigger:{trigger:"#hero",start:"top top",end:"+=150%",pin:true,scrub:1}})
+  .to(".hero-copy",{y:-120,opacity:0,duration:.5,ease:"power2.inOut"},0)
+  .to(".hero-media video",{scale:1.25,duration:.7,ease:"power2.inOut"},0)
+  .to("#hero",{clipPath:"inset(0% 0% 100% 0%)",duration:.6,ease:"power2.inOut"},0.35);
+</script>
 </body>
 </html>

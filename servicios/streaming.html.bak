@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios de Streaming - CORDEXSERVER</title>
+  <!-- Subimos un nivel con ../ para encontrar css y img -->
+  <link rel="icon" href="../img/I1.jpeg">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Header y Sidebar -->
+  <header class="header">
+    <div class="container header__inner">
+      <button class="logo logo--btn" id="sidebarToggle" aria-label="Abrir barra lateral">
+        <img class="logo__img" src="../img/I1.jpeg" alt="Logo" width="38" height="46">
+        <span>CORDEXSERVER</span>
+      </button>
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Barra lateral con enlaces hacia la raíz (../) -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="sidebar" id="sidebar" aria-hidden="true">
+    <div class="sidebar__header">
+      <span class="sidebar__brand">
+        <img class="logo__img" src="../img/I1.jpeg" alt="Logo" width="38" height="46">
+        <span class="sidebar__title">CORDEXSERVER</span>
+      </span>
+      <button class="sidebar__close" id="sidebarClose">&times;</button>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html">🏠 Inicio</a>
+      <a href="streaming.html">📺 Streaming</a>
+      <a href="servidores.html">🖥️ Servidores</a>
+      <a href="../index.html#contacto">✉️ Contacto</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__content">
+        <h1>Servicios de <span class="highlight">Streaming</span></h1>
+        <p>Plataformas de transmisión de alta disponibilidad, baja latencia y servidores multimedia.</p>
+      </div>
+    </section>
+
+    <!-- Contenido específico del servicio -->
+    <section class="section">
+      <div class="container">
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon">📡</div>
+            <h3>Servidores RTMP / HLS</h3>
+            <p>Transmisión en vivo para eventos y canales con distribución global de contenido.</p>
+            <a href="../index.html#contacto" class="btn btn--small">Solicitar Demo</a>
+          </article>
+          <article class="card">
+            <div class="card__icon">🎬</div>
+            <h3>Hosting VOD / IPTV</h3>
+            <p>Almacenamiento y codificación optimizada para bibliotecas de video bajo demanda.</p>
+            <a href="../index.html#contacto" class="btn btn--small">Contratar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 CORDEXSERVER. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Subimos un nivel para enlazar el script -->
+  <script src="../js/script.js"></script>
+</body>
+</html>
