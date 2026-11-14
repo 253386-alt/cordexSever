@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pago por transferencia - CORDEXSERVER</title>
+<link rel="icon" href="img/I1.jpeg">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--muted:#a1a1aa;--line:rgba(255,255,255,.12)}
+body{background:#000;color:#fff;font-family:Inter,system-ui,sans-serif}
+.pill{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:#000;border-radius:999px;padding:.85rem 1.9rem;font-weight:700}
+.pill-ghost{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line);color:#fff;border-radius:999px;padding:.85rem 1.7rem;font-weight:600}
+.card{border:1px solid var(--line);border-radius:24px;background:#0a0a0a}
+</style>
+</head>
+<body>
+<header class="border-b border-white/10 bg-black/80 backdrop-blur">
+  <div class="max-w-[1100px] mx-auto px-6 h-[72px] flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3"><img src="img/I1.jpeg" class="h-10 rounded-lg" alt="CORDEXSERVER"><span class="font-bold">CORDEXSERVER</span></a>
+    
+  </div>
+</header>
+<main class="px-6 py-16">
+  <div class="max-w-[900px] mx-auto">
+    <p class="text-white/50 tracking-widest text-xs uppercase mb-3">Pago</p>
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-[.95]">Pago por<br>transferencia</h1>
+    <p class="text-white/60 mt-6 text-lg">Completa tu pedido realizando una transferencia con los siguientes datos y envíanos el comprobante para activar tu servicio.</p>
+
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="card p-8">
+        <h2 class="text-2xl font-bold mb-4">Datos para transferencia</h2>
+        <ul class="space-y-3 text-white/70">
+          <li><span class="text-white font-semibold">Banco:</span> [Nombre del banco]</li>
+          <li><span class="text-white font-semibold">Titular:</span> [Nombre del titular]</li>
+          <li><span class="text-white font-semibold">Tipo de cuenta:</span> [Ahorros/Corriente]</li>
+          <li><span class="text-white font-semibold">Número de cuenta:</span> [0000000000]</li>
+          <li><span class="text-white font-semibold">CLABE/IBAN:</span> [000000000000000000]</li>
+          <li><span class="text-white font-semibold">Referencia:</span> Tu nombre o correo</li>
+        </ul>
+        <p class="text-white/40 text-sm mt-5">* Reemplaza estos datos con tu información real de pago.</p>
+      </div>
+      <div class="card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop" alt="Pago por transferencia" class="w-full h-48 object-cover grayscale">
+        <div class="p-8">
+          <h2 class="text-2xl font-bold mb-3">Pasos a seguir</h2>
+          <ol class="space-y-2 text-white/70 list-decimal list-inside">
+            <li>Realiza la transferencia por el monto de tu plan/servicio.</li>
+            <li>Guarda el comprobante de pago.</li>
+            <li>Envíalo a nuestro soporte indicando el servicio solicitado.</li>
+            <li>Activaremos tu pedido tras confirmar el pago.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 flex gap-4 flex-wrap">
+      <a href="index.html" class="pill">Volver al inicio</a>
+      <a href="index.html" class="pill-ghost">Volver al inicio</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
